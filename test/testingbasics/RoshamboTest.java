@@ -12,12 +12,14 @@ public class RoshamboTest {
         assertEquals(-1, Roshambo.compareShapes(Roshambo.PAPER, Roshambo.ROCK));
         assertEquals(-1, Roshambo.compareShapes(Roshambo.ROCK, Roshambo.SCISSORS));
         assertEquals(-1, Roshambo.compareShapes(Roshambo.SCISSORS, Roshambo.PAPER));
+        assertEquals(-1, Roshambo.compareShapes(Roshambo.SCISSORS, Roshambo.SCISSORS));
     }
 
     @Test
     void compareShapesWherePlayer2Wins() {
         assertEquals(1, Roshambo.compareShapes(Roshambo.ROCK, Roshambo.PAPER));
         assertEquals(1, Roshambo.compareShapes(Roshambo.PAPER, Roshambo.SCISSORS));
+        
     }
 
     @Test
