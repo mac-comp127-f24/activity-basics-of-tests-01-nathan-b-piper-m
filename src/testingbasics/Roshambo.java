@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Roshambo {
-    // The three possible hand shapes
+    // The three possible hand shapes hihi!
     public static final String
         ROCK = "o",
         PAPER = "_",
@@ -25,10 +25,38 @@ public class Roshambo {
         if (
             shape2.equals(SCISSORS) && shape1.equals(PAPER)
             || shape2.equals(PAPER) && shape1.equals(ROCK)
-        ) {
+            || shape2.equals(ROCK) && shape1.equals(SCISSORS)) 
+            {
             return 1;
         } else {
             return -1;
         }
     }
+    /**
+     * Plays one round of a Roshambo tournament, where all players make hand signs, then each player
+     * takes the hand sign of the player on their left if that player's sign beat their own.
+     * 
+     * @param handShapes The hand shapes of the players, with the first considered to be next to the
+     *                   last (because the players are in a circle).
+     * @return  A new list with the hand shapes for the next round.
+     */
+    public static List<String> playOneRound(List<String> handShapes) {
+        String shapeToLeft = handShapes.getLast();
+        List<String> newHandShapes = new ArrayList<>();
+        for (String handShape : handShapes) {
+            // Having issue figuring out which is player 1 and which is player 2
+            int winner = compareShapes(shapeToLeft, handShape);
+            if (winner == 1){
+                newHandShapes.add(handShape); 
+            }
+            else {
+                newHandShapes.add(shapeToLeft);
+            }
+            shapeToLeft = handShape;
+            }
+        return newHandShapes;
+    }
+       
 }
+
+
