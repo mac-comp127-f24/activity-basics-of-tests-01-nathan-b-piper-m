@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Roshambo {
-    // The three possible hand shapes
+    // The three possible hand shapes hihi!
     public static final String
         ROCK = "o",
         PAPER = "_",
